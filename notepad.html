@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Notepad</title>
+</head>
+<body>
+<h1>Notes:</h1>
+<textarea class="Comments" rows="25" cols="80">
+</textarea>
+<script>
+var elements = document.querySelectorAll('textarea');
+
+function checkValidity() {};
+
+for (i=0; i<elements.length; i++) {
+ (function(element) {
+   var id = element.getAttribute('id');
+   element.value = sessionStorage.getItem(id); 
+   element.oninput = function() {
+     sessionStorage.setItem(id, element.value);
+     checkValidity();
+   };
+ })(elements[i]);
+}
+</script>
+
+</body>
+</html>

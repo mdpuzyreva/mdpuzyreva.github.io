@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weight/Height</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="table.css">
+	<script src="table.js"></script>
+	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Day', 'Weight'],
+          ['21.11',  59.5     ],
+          ['30.11',  58.3   ],
+          ['07.12',  57.1      ],
+          ['14.12',  56],
+          ['24.12', 54]
+
+        ]);
+
+        var options = {
+          title: 'Performance',
+          curveType: 'function',
+          legend: { position: 'right' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+<h1>Task 1</h1>
+<table>
+
+	<tr>
+		<th>Participant</th>
+		<th>Height</th>
+		<th>Weight</th>
+	</tr>
+	<tr>
+		<td>Egor</td>
+		<td>182</td>
+		<td>82</td>
+	</tr>
+	<tr>
+		<td>Masha</td>
+		<td>176</td>
+		<td>56</td>
+	</tr>
+</table>
+<h1>Task 2</h1>
+<p>Comments:<br>
+<textarea onchange='window.newWin.document.write(this.value)' class="Comments" rows="10" cols="40">
+</textarea>
+<p>
+<form>
+<input type="button" value="Open new window" onclick="newwindow()">
+</form>
+</p>
+</p>
+<p>
+<h1>Task 3</h1>
+	<div id="curve_chart" style="width: 700px; height: 360px"></div>
+</p>
+</body>
+</html>
